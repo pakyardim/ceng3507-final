@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #9575cd;
+  justify-content: space-between;
+  color: #f5f5f5;
+  padding: 16px;
+}
+
+header img {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.addButtons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.addButtons button {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff9800;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.addButtons button:hover {
+  background-color: #ff9900b7;
+}
+
+.addButtons select {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.addButtons input {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.active {
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #ff9800;
+  text-align: center;
+
+  /* center of the element to line up with the center of the page */
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: 0.2s ease-in-out;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal h4 {
+  margin-top: 1rem;
+}
+
+.modal form input {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal form button {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #9575cd;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal form button:hover {
+  background-color: #624b8a;
+}
+
+.modal form select {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal form label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 90%;
+
+  /* remove borders */
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table thead tr th {
+  padding: 0.5rem;
+  text-align: left;
+  background-color: #9575cd;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+table tbody tr td {
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #1e1e1e;
+}
+
+.stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f5f5f5;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background-color: #e0e0e0;
+}
+
+.edit-btn,
+.delete-btn {
+  min-width: 3rem;
+  height: 2rem;
+  border: none;
+  color: #f5f5f5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #ff9800;
+  margin-right: 1rem;
+}
+
+.delete-btn {
+  background-color: #624b8a;
+}

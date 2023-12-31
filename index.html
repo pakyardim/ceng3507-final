@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/student.png" alt="logo" class="logo" />
+      <h1>Student Management System</h1>
+    </header>
+    <main>
+      <div class="addButtons">
+        <button id="add-student-modal-btn">Add New Student</button>
+        <select name="lectures" id="lecture-select">
+        </select>
+        <input
+          type="number"
+          id="search-by-id"
+          name="search"
+          placeholder="Search Student"
+        />
+        <button id="add-lecture-modal-btn">Add New Lecture</button>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>surname</th>
+              <th>midterm</th>
+              <th>final</th>
+              <th>grade</th>
+              <th>
+                <select name="filter" id="filter-select">
+                  <option value="all">All</option>
+                  <option value="passed">Passed</option>
+                  <option value="failed">Failed</option>
+                </select>
+              </th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody id="student-table">
+          </tbody>
+        </table>
+      </div>
+      <div class="stats">
+        <div>
+          <h4>Grading System</h4>
+          <h3 id="grading-system-text"></h3>
+        </div>
+        <div>
+          <h4>Number of Students</h4>
+          <h3 id="num-of-studs"></h3>
+        </div>
+        <div>
+          <h4>Number of Passed</h4>
+          <h3 id="num-of-passed"></h3>
+        </div>
+        <div>
+          <h4>Number of Failed</h4>
+          <h3 id="num-of-failed"></h3>
+        </div>
+        <div>
+          <h4>Mean Score</h4>
+          <h3 id="mean-score"></h3>
+        </div>
+      </div>
+    </main>
+    <div class="modal " id="lecture-modal">
+      <form id="add-lecture-form">
+        <h3>ADD LECTURE</h3>
+        <label for="lecture-name">Lecture Name:</label>
+        <input type="text" id="lecture-name" name="lecture-name" required />
+        <label for="grading-system">Grading System:</label>
+        <select name="grading" id="grading-select">
+          <option value="7 Scale">Point Scale 7</option>
+          <option value="10 Scale">Point Scale 10</option>
+        </select>
+        <button type="submit">+ Add</button>
+      </form>
+    </div>
+    <div class="modal" id="student-modal">
+      <form id="add-student-form">
+        <h3>ADD STUDENT</h3>
+        <p id="add-student-modal-lecture-name"></p>
+        <input placeholder="id" type="number" id="id" name="id" required />
+        <input placeholder="name" type="text" id="name" name="name" required />
+        <input placeholder="surname" type="text" id="surname" name="surname" required />
+        <input min="0" max="100" placeholder="midterm score" type="number" id="midtermScore" name="midtermScore" required />
+        <input min="0" max="100" placeholder="final score" type="number" id="finalScore" name="finalScore" required />
+        <button type="submit">+ Add</button>
+      </form>
+    </div>
+    <div class="modal" id="edit-student-modal">
+      <form id="edit-student-form">
+        <h3>Edit STUDENT</h3>
+        <p id="edit-student-modal-lecture-name"></p>
+        <input placeholder="id" type="number" id="e-id" name="e-id" required />
+        <input placeholder="name" type="text" id="e-name" name="e-name" required />
+        <input placeholder="surname" type="text" id="e-surname" name="e-surname" required />
+        <input min="0" max="100" placeholder="midterm score" type="number" id="e-midtermScore" name="e-midtermScore" required />
+        <input min="0" max="100" placeholder="final score" type="number" id="e-finalScore" name="e-finalScore" required />
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+    <div class="modal" id="student-search-modal">
+      <h3 id="student-detail-name"></h3>
+      <table>
+        <thead>
+          <tr>
+            <th>lecture</th>
+            <th>midterm</th>
+            <th>final</th>
+            <th>grade</th>
+          </tr>
+        </thead>
+        <tbody id="student-detail-table">
+        </tbody>
+      </table>
+      <h4 id="gpa"></h4>
+      <button class="close-modal" id="close-details">X</button>
+    </div>
+    <div class="overlay"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
